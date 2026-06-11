@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "registerSuccess": "Đăng ký thành công",
+    "loginSuccess": "Đăng nhập thành công",
+    "invalidCredentials": "Email hoặc mật khẩu không đúng",
+    "emailAlreadyExists": "Email đã được sử dụng",
+    "unauthorized": "Bạn cần đăng nhập để tiếp tục",
+    "forbidden": "Bạn không có quyền truy cập",
+    "logoutSuccess": "Đăng xuất thành công"
+  },
+  "validation": {
+    "required": "Trường này là bắt buộc",
+    "invalidEmail": "Email không hợp lệ",
+    "passwordMin": "Mật khẩu phải có ít nhất 6 ký tự"
+  }
+}
