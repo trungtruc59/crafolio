@@ -1,31 +1,53 @@
 import { NextResponse } from "next/server";
 
-export function successResponse<T>(
-  data: T,
-  messageKey = "common.success",
-  status = 200
-) {
+export interface ApiResponse<T = unknown> {
+  success: boolean;
+  code: number;
+  messageKey: string;
+  data?: T;
+  errors?: unknown;
+}
+
+export function successResponse<T>({
+  code = 200,
+  messageKey,
+  data,
+}: {
+  code?: number;
+  messageKey: string;
+  data?: T;
+}) {
   return NextResponse.json(
     {
       success: true,
+      code,
       messageKey,
       data,
     },
-    { status }
+    {
+      status: code,
+    }
   );
 }
 
-export function errorResponse(
-  messageKey = "common.error",
-  status = 400,
-  errors?: unknown
-) {
+export function errorResponse({
+  code = 400,
+  messageKey,
+  errors,
+}: {
+  code?: number;
+  messageKey: string;
+  errors?: unknown;
+}) {
   return NextResponse.json(
     {
       success: false,
+      code,
       messageKey,
       errors,
     },
-    { status }
+    {
+      status: code,
+    }
   );
 }

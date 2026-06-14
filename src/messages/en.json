@@ -1,12 +1,37 @@
 {
   "auth": {
-    "registerSuccess": "Register successfully",
-    "loginSuccess": "Login successfully",
-    "invalidCredentials": "Email or password is incorrect",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "name": "Full name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+
+    "loginTitle": "Login to Crafolio",
+    "loginDescription": "Continue building your personal portfolio.",
+    "registerTitle": "Create your Crafolio account",
+    "registerDescription": "Start creating your personal no-code portfolio.",
+
+    "continueWithGoogle": "Continue with Google",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+
+    "registerSuccess": "Registered successfully",
+    "loginSuccess": "Logged in successfully",
     "emailAlreadyExists": "Email already exists",
-    "unauthorized": "You need to login to continue",
-    "forbidden": "You do not have permission",
-    "logoutSuccess": "Logout successfully"
+    "invalidRegisterData": "Invalid registration data",
+    "invalidCredentials": "Incorrect email or password",
+    "invalidEmail": "Invalid email",
+    "nameTooShort": "Name must be at least 2 characters",
+    "nameTooLong": "Name must not exceed 80 characters",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "passwordNotMatch": "Password confirmation does not match",
+    "passwordRequired": "Please enter your password",
+    "unauthorized": "You are not logged in"
+  },
+  "common": {
+    "serverError": "An error occurred, please try again"
   },
   "validation": {
     "required": "This field is required",
