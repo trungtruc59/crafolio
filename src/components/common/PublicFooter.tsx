@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "./Container";
+import Image from "next/image";
 
 const footerLinks = {
   Product: [
@@ -26,8 +27,13 @@ export default function Footer() {
         <div className="grid gap-10 py-14 md:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-sm font-bold text-slate-950">
-                C
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl text-sm font-bold text-slate-950">
+                <Image src="/logo.png"
+                  alt="Crafolio Logo"
+                  width={36}
+                  height={26}>
+                  
+                </Image>
               </div>
               <span className="text-lg font-bold text-white">Crafolio</span>
             </Link>

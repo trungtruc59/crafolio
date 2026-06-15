@@ -31,11 +31,67 @@
     "unauthorized": "Bạn chưa đăng nhập"
   },
   "common": {
-    "serverError": "Có lỗi xảy ra, vui lòng thử lại"
+    "serverError": "Có lỗi xảy ra, vui lòng thử lại",
+    "button": {
+      "save": "Lưu",
+      "cancel": "Hủy",
+      "delete": "Xóa",
+      "edit": "Chỉnh sửa",
+      "update": "Cập nhật",
+      "add": "Thêm",
+      "remove": "Xóa"
+    },
+    "loading": "Đang tải...",
+    "noData": "Không có dữ liệu để hiển thị",
+    "search": "Tìm kiếm...",
+    "back": "Quay lại",
+    "confirm": "Xác nhận",
+    "yes": "Có",
+    "no": "Không",
+    "success": "Thành công",
+    "error": "Lỗi",
+    "logout": "Đăng xuất",
+    "linkContact": "Liên kết",
+    "link": "Đường dẫn"
   },
   "validation": {
     "required": "Trường này là bắt buộc",
     "invalidEmail": "Email không hợp lệ",
     "passwordMin": "Mật khẩu phải có ít nhất 6 ký tự"
+  },
+  "dashboard": {
+    "welcome": "Chào mừng đến với Dashboard",
+    "description": "Đây là nơi bạn quản lý portfolio của mình.",
+    "settings": {
+      "title": "Cài đặt tài khoản",
+      "description": "Cập nhật thông tin cá nhân và cài đặt tài khoản.",
+      "settingPortfolio": "Thiết lập portfolio",
+      "settingPortfolioOptions": {
+        "op1": "Hồ sơ công khai",
+        "op2": "Hiển thị email",
+        "op3": "Hiển thị dự án"
+      },
+      "settingSecurity": "Cài đặt bảo mật",
+      "settingSecurityOptions": {
+        "op1": "Thông báo đăng nhập",
+        "op2": "Ẩn portfolio"
+      },
+      "descriptionSettingPortfolio": "Quản lý những thông tin công khai trên portfolio.",
+      "descriptionSettingSecurity": "Cài đặt thông tin cá nhân và bảo mật tài khoản."
+    },
+    "profile": "Hồ sơ cá nhân",
+    "profileSettings": {
+      "title": "Quản lý hồ sơ cá nhân",
+      "description": "Thêm thông tin cá nhân như Github, LinkedIn, Facebook,.. để làm nổi bật portfolio của bạn.",
+      "name": "Tên",
+      "email": "Email",
+      "updateSuccess": "Cập nhật hồ sơ thành công",
+      "updateError": "Có lỗi xảy ra khi cập nhật hồ sơ",
+      "linkError": "Vui lòng nhập đường dẫn hợp lệ",
+      "networkPlatform": "Nền tảng",
+      "contactedPlatform": "Nền tảng đã liên kết",
+      "noLinkedPlatform": "Chưa có nền tảng nào được liên kết",
+      "noLinkedPlatformDescription": "Thêm nền tảng xã hội đầu tiên để hoàn thiện hồ sơ của bạn."
+    }
   }
 }
