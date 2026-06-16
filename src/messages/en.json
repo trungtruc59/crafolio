@@ -28,7 +28,20 @@
     "passwordTooShort": "Password must be at least 8 characters",
     "passwordNotMatch": "Password confirmation does not match",
     "passwordRequired": "Please enter your password",
-    "unauthorized": "You are not logged in"
+    "unauthorized": "You are not logged in",
+    "forbidden": "You do not have permission to perform this action"
+  },
+  "cloudinary": {
+    "imageRequired": "Please select an image",
+    "invalidImageType": "The selected file must be an image",
+    "imageTooLarge": "Image size must not exceed 10MB",
+    "publicIdRequired": "Public ID is required",
+    "uploadSuccess": "Image uploaded successfully",
+    "uploadFailed": "Image upload failed",
+    "listSuccess": "Images loaded successfully",
+    "listFailed": "Could not load images",
+    "deleteSuccess": "Image deleted successfully",
+    "deleteFailed": "Could not delete image"
   },
   "common": {
     "serverError": "An error occurred, please try again"

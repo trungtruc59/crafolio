@@ -2,8 +2,9 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
+import { getSession, signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
+import { getRoleRedirectPath } from "@/lib/role-redirect";
 
 export function LoginForm() {
   const t = useTranslations();
@@ -26,14 +27,14 @@ export function LoginForm() {
       callbackUrl: "/",
     });
 
-    setIsLoading(false);
-
     if (result?.error) {
+      setIsLoading(false);
       setMessageKey("auth.invalidCredentials");
       return;
     }
 
-    window.location.href = "/";
+    const session = await getSession();
+    window.location.href = getRoleRedirectPath(session?.user?.role);
   }
 
   return (
@@ -94,7 +95,7 @@ export function LoginForm() {
 
       <button
         type="button"
-        onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+        onClick={() => signIn("google", { callbackUrl: "/login" })}
         className="mt-4 w-full rounded-lg border border-slate-300 px-4 py-2 font-medium text-slate-700"
       >
         {t("auth.continueWithGoogle")}

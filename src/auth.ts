@@ -5,6 +5,10 @@ import { connectDB } from "@/lib/db";
 import { User } from "@/models/User";
 import { comparePassword } from "@/lib/password";
 
+function isUserRole(role: unknown): role is "user" | "admin" {
+  return role === "user" || role === "admin";
+}
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   session: {
     strategy: "jwt",
@@ -61,12 +65,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
 
     async session({ session, token }) {
-    if (session.user) {
+      if (session.user) {
         session.user.id = token.sub ?? "";
-        session.user.role = token.role;
-    }
+        session.user.role = isUserRole(token.role) ? token.role : "user";
+      }
 
-    return session;
+      return session;
     },
   },
 

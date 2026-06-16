@@ -7,9 +7,14 @@ export default auth((request) => {
 
   const isLoggedIn = !!request.auth;
   const isAdminRoute = pathname.startsWith("/admin");
+  const isUserDashboardRoute = pathname.startsWith("/dashboard");
 
   if (!isLoggedIn) {
     return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  if (isUserDashboardRoute && request.auth?.user?.role === "admin") {
+    return NextResponse.redirect(new URL("/admin/dashboard", request.url));
   }
 
   if (isAdminRoute && request.auth?.user?.role !== "admin") {

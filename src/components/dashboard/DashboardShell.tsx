@@ -53,7 +53,7 @@ export default function DashboardShell({
   return (
     <section className=" min-h-[calc(100vh-4rem)] bg-slate-50 px-4 py-8 text-slate-950 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[340px_minmax(0,1fr)]">
-        <aside className="space-y-4 sticky top-0 self-start">
+        <aside className="space-y-4 sticky top-20 self-start">
           <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
             <div className="flex items-center gap-4">
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-950 text-xl font-semibold text-white">

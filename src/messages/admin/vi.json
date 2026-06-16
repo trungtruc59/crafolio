@@ -1,0 +1,32 @@
+{
+  "layout": {
+    "brand": "Crafolio",
+    "title": "CRAFOLIO",
+    "viewSite": "Xem trang",
+    "navigation": {
+      "overview": "Tổng quan",
+      "userDashboard": "Bảng điều khiển người dùng"
+    },
+    "fallbackName": "Quản trị viên"
+  },
+  "dashboard": {
+    "eyebrow": "Quản trị",
+    "title": "Bảng điều khiển",
+    "stats": {
+      "totalUsers": "Tổng người dùng",
+      "publishedPortfolios": "Portfolio đã xuất bản",
+      "templates": "Mẫu giao diện"
+    },
+    "workspace": {
+      "title": "Không gian quản trị",
+      "description": "Quản lý người dùng, mẫu giao diện và cài đặt hệ thống trong khu vực quản trị."
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Không tìm thấy trang quản trị",
+    "description": "Route admin bạn vừa mở không tồn tại hoặc chưa được kích hoạt.",
+    "dashboard": "Về bảng điều khiển",
+    "templates": "Mở templates"
+  }
+}

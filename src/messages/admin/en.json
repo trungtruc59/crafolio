@@ -1,0 +1,32 @@
+{
+  "layout": {
+    "brand": "Crafolio",
+    "title": "Admin Template",
+    "viewSite": "View site",
+    "navigation": {
+      "overview": "Overview",
+      "userDashboard": "User dashboard"
+    },
+    "fallbackName": "Admin"
+  },
+  "dashboard": {
+    "eyebrow": "Admin",
+    "title": "Dashboard",
+    "stats": {
+      "totalUsers": "Total users",
+      "publishedPortfolios": "Published portfolios",
+      "templates": "Templates"
+    },
+    "workspace": {
+      "title": "Admin workspace",
+      "description": "Manage users, templates, and system settings from this admin area."
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Admin page not found",
+    "description": "The admin route you opened does not exist or has not been enabled yet.",
+    "dashboard": "Back to dashboard",
+    "templates": "Open templates"
+  }
+}

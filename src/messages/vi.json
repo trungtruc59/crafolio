@@ -28,7 +28,20 @@
     "passwordTooShort": "Mật khẩu phải có ít nhất 8 ký tự",
     "passwordNotMatch": "Mật khẩu xác nhận không khớp",
     "passwordRequired": "Vui lòng nhập mật khẩu",
-    "unauthorized": "Bạn chưa đăng nhập"
+    "unauthorized": "Bạn chưa đăng nhập",
+    "forbidden": "Bạn không có quyền thực hiện hành động này"
+  },
+  "cloudinary": {
+    "imageRequired": "Vui lòng chọn hình ảnh",
+    "invalidImageType": "Tệp được chọn phải là hình ảnh",
+    "imageTooLarge": "Kích thước ảnh không được vượt quá 10MB",
+    "publicIdRequired": "Thiếu Public ID",
+    "uploadSuccess": "Tải ảnh lên thành công",
+    "uploadFailed": "Tải ảnh lên thất bại",
+    "listSuccess": "Tải danh sách ảnh thành công",
+    "listFailed": "Không thể tải danh sách ảnh",
+    "deleteSuccess": "Xóa ảnh thành công",
+    "deleteFailed": "Không thể xóa ảnh"
   },
   "common": {
     "serverError": "Có lỗi xảy ra, vui lòng thử lại",

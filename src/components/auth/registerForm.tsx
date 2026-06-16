@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
+import { Eye, EyeOff } from "lucide-react";
 
 type ApiResponse<T = unknown> = {
   success: boolean;
@@ -20,6 +21,8 @@ export function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [messageKey, setMessageKey] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
@@ -103,7 +106,6 @@ export function RegisterForm() {
             </p>
           )}
         </div>
-
         <div>
           <label className="mb-1 block text-sm font-medium text-slate-700">
             {t("auth.email")}
@@ -127,14 +129,29 @@ export function RegisterForm() {
           <label className="mb-1 block text-sm font-medium text-slate-700">
             {t("auth.password")}
           </label>
-          <input
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            className="w-full rounded-lg border text-slate-700 border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
-            placeholder={t("auth.password")}
-            required
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              className="w-full rounded-lg border text-slate-700 border-slate-300 px-3 py-2 pr-11 outline-none focus:border-slate-900"
+              placeholder={t("auth.password")}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((current) => !current)}
+              className="absolute cursor-pointer inset-y-0 right-0 flex w-11 items-center justify-center text-slate-500 transition hover:text-slate-900"
+              aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+              title={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+            >
+              {showPassword ? (
+                <EyeOff className="h-4 w-4" />
+              ) : (
+                <Eye className="h-4 w-4" />
+              )}
+            </button>
+          </div>
           {getFieldError("password") && (
             <p className="mt-1 text-sm text-red-600">
               {getFieldError("password")}
@@ -146,14 +163,33 @@ export function RegisterForm() {
           <label className="mb-1 block text-sm font-medium text-slate-700">
             {t("auth.confirmPassword")}
           </label>
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(event) => setConfirmPassword(event.target.value)}
-            className="w-full rounded-lg border text-slate-700 border-slate-300 px-3 py-2 outline-none focus:border-slate-900"
-            placeholder={t("auth.confirmPassword")}
-            required
-          />
+          <div className="relative">
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              value={confirmPassword}
+              onChange={(event) => setConfirmPassword(event.target.value)}
+              className="w-full rounded-lg border text-slate-700 border-slate-300 px-3 py-2 pr-11 outline-none focus:border-slate-900"
+              placeholder={t("auth.confirmPassword")}
+              required
+            />
+            <button
+              type="button"
+              onClick={() => setShowConfirmPassword((current) => !current)}
+              className="absolute cursor-pointer inset-y-0 right-0 flex w-11 items-center justify-center text-slate-500 transition hover:text-slate-900"
+              aria-label={
+                showConfirmPassword ? "Ẩn mật khẩu xác nhận" : "Hiện mật khẩu xác nhận"
+              }
+              title={
+                showConfirmPassword ? "Ẩn mật khẩu xác nhận" : "Hiện mật khẩu xác nhận"
+              }
+            >
+              {showConfirmPassword ? (
+                <EyeOff className="h-4 w-4" />
+              ) : (
+                <Eye className="h-4 w-4" />
+              )}
+            </button>
+          </div>
           {getFieldError("confirmPassword") && (
             <p className="mt-1 text-sm text-red-600">
               {getFieldError("confirmPassword")}

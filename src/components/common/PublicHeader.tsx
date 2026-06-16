@@ -25,6 +25,8 @@ export default function Header() {
   const displayName =
     session?.user?.name || session?.user?.email || "Dashboard";
   const isLoggedIn = Boolean(session?.user);
+  const dashboardHref =
+    session?.user?.role === "admin" ? "/admin/dashboard" : "/dashboard";
   const userInitial = displayName.charAt(0).toUpperCase();
 
   function isActiveNavItem(href: string) {
@@ -142,7 +144,7 @@ export default function Header() {
 
                   <div className="py-2">
                     <Link
-                      href="/dashboard"
+                      href={dashboardHref}
                       onClick={() => setUserMenuPathname(null)}
                       className="flex px-4 py-2 gap-1 items-center text-sm text-slate-600 transition hover:bg-slate-50 hover:text-slate-950"
                     >
