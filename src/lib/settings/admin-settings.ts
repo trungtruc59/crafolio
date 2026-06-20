@@ -9,8 +9,6 @@ export const ADMIN_SETTINGS_KEY = "admin-settings";
 
 export const DEFAULT_ADMIN_SETTINGS = {
   mail: {
-    fromName: "Crafolio",
-    fromAddress: undefined,
     smtpServer: undefined,
     smtpPort: 587,
     smtpEncryption: "tls",
@@ -20,7 +18,7 @@ export const DEFAULT_ADMIN_SETTINGS = {
   },
   system: {
     siteName: "Crafolio",
-    siteUrl: "https://crafolio.app",
+    siteUrl: "https://crafolio.id.vn",
     adminEmail: undefined,
     language: "vi",
     timezone: "Asia/Bangkok",
@@ -78,7 +76,6 @@ export async function saveAdminSettings(
   const parsed = updateAdminSettingsSchema.parse(input);
   const fieldsToSet: Record<string, unknown> = {
     key: ADMIN_SETTINGS_KEY,
-    "mail.fromName": parsed.mail.fromName,
     "mail.smtpPort": parsed.mail.smtpPort,
     "mail.smtpEncryption": parsed.mail.smtpEncryption,
     "system.siteName": parsed.system.siteName,
@@ -107,7 +104,6 @@ export async function saveAdminSettings(
     fieldsToUnset[path] = "";
   }
 
-  setOptionalField("mail.fromAddress", parsed.mail.fromAddress);
   setOptionalField("mail.smtpServer", parsed.mail.smtpServer);
   setOptionalField("mail.smtpUsername", parsed.mail.smtpUsername);
   setOptionalField("mail.testEmail", parsed.mail.testEmail);

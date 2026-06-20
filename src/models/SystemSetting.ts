@@ -5,8 +5,6 @@ export type Locale = "vi" | "en";
 export type SmtpEncryption = "tls" | "ssl" | "none";
 
 export interface IAdminMailSettings {
-  fromName: string;
-  fromAddress?: string;
   smtpServer?: string;
   smtpPort: number;
   smtpEncryption: SmtpEncryption;
@@ -74,16 +72,6 @@ const SystemSettingSchema = new Schema<ISystemSetting>(
     },
 
     mail: {
-      fromName: {
-        type: String,
-        trim: true,
-        default: "Crafolio",
-      },
-      fromAddress: {
-        type: String,
-        trim: true,
-        lowercase: true,
-      },
       smtpServer: {
         type: String,
         trim: true,
@@ -120,7 +108,7 @@ const SystemSettingSchema = new Schema<ISystemSetting>(
       siteUrl: {
         type: String,
         trim: true,
-        default: "https://crafolio.app",
+        default: "https://crafolio.id.vn",
       },
       adminEmail: {
         type: String,

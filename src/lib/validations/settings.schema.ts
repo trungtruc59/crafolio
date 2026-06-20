@@ -45,8 +45,6 @@ export const updateI18nSettingsSchema = z.object({
 
 export const updateAdminSettingsSchema = z.object({
   mail: z.object({
-    fromName: z.string().trim().min(1).max(120),
-    fromAddress: optionalEmail,
     smtpServer: optionalText,
     smtpPort: z.coerce.number().int().min(1).max(65535),
     smtpEncryption: z.enum(["tls", "ssl", "none"]),

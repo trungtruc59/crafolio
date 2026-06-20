@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { getAdminLocale, getAdminMessages } from "@/i18n/admin";
 import { getAdminSettings } from "@/lib/settings/admin-settings";
+import SettingsForm from "./SettingsForm";
 
 const inputClass =
   "mt-2 h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-slate-950 focus:ring-2 focus:ring-slate-950/10";
@@ -42,22 +43,13 @@ export default async function AdminSettingsPage({
   const messages = await getAdminMessages(locale);
   const settings = await getAdminSettings();
   const status = await searchParams;
+  const initialStatus = status?.saved
+    ? "saved"
+    : status?.error
+      ? "error"
+      : undefined;
 
   const emailFields: SettingField[] = [
-    {
-      name: "mailFromName",
-      label: messages.settings.email.form.fromName.label,
-      placeholder: messages.settings.email.form.fromName.placeholder,
-      defaultValue: settings.mail.fromName,
-    },
-    {
-      name: "mailFromAddress",
-      label: messages.settings.email.form.fromAddress.label,
-      placeholder: messages.settings.email.form.fromAddress.placeholder,
-      type: "email",
-      autoComplete: "email",
-      defaultValue: settings.mail.fromAddress,
-    },
     {
       name: "smtpServer",
       label: messages.settings.email.form.smtpServer.label,
@@ -269,10 +261,10 @@ export default async function AdminSettingsPage({
   ];
 
   return (
-    <form
-      method="POST"
-      action="/api/settings"
-      className="mx-auto max-w-6xl space-y-6"
+    <SettingsForm
+      initialStatus={initialStatus}
+      savedMessage={messages.settings.feedback.saved}
+      errorMessage={messages.settings.feedback.error}
     >
       <div className="flex flex-col gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-start sm:justify-between">
         <div>
@@ -285,16 +277,6 @@ export default async function AdminSettingsPage({
           <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-500">
             {messages.settings.description}
           </p>
-          {status?.saved ? (
-            <p className="mt-3 text-sm font-medium text-emerald-700">
-              {messages.settings.feedback.saved}
-            </p>
-          ) : null}
-          {status?.error ? (
-            <p className="mt-3 text-sm font-medium text-red-600">
-              {messages.settings.feedback.error}
-            </p>
-          ) : null}
         </div>
         <button
           type="submit"
@@ -311,7 +293,7 @@ export default async function AdminSettingsPage({
           title={messages.settings.email.title}
           description={messages.settings.email.description}
         />
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
           {emailFields.map((field) => (
             <SettingControl key={field.name} field={field} />
           ))}
@@ -355,7 +337,7 @@ export default async function AdminSettingsPage({
           ))}
         </div>
       </section>
-    </form>
+    </SettingsForm>
   );
 }
 

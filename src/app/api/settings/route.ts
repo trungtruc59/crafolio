@@ -18,8 +18,6 @@ function readString(formData: FormData, key: string) {
 function formDataToSettings(formData: FormData): UpdateAdminSettingsInput {
   return {
     mail: {
-      fromName: readString(formData, "mailFromName"),
-      fromAddress: readString(formData, "mailFromAddress"),
       smtpServer: readString(formData, "smtpServer"),
       smtpPort: Number(readString(formData, "smtpPort")),
       smtpEncryption: readString(formData, "smtpEncryption") as
@@ -58,16 +56,19 @@ function formDataToSettings(formData: FormData): UpdateAdminSettingsInput {
 
 async function parseSettingsRequest(request: Request) {
   const contentType = request.headers.get("content-type") || "";
+  const acceptsJson =
+    request.headers.get("accept")?.includes("application/json") ||
+    request.headers.get("x-requested-with") === "fetch";
 
   if (contentType.includes("application/json")) {
     return {
-      isFormSubmit: false,
+      shouldRedirect: false,
       data: await request.json(),
     };
   }
 
   return {
-    isFormSubmit: true,
+    shouldRedirect: !acceptsJson,
     data: formDataToSettings(await request.formData()),
   };
 }
@@ -89,11 +90,11 @@ export async function POST(request: Request) {
     });
   }
 
-  const { isFormSubmit, data } = await parseSettingsRequest(request);
+  const { shouldRedirect, data } = await parseSettingsRequest(request);
   const parsed = updateAdminSettingsSchema.safeParse(data);
 
   if (!parsed.success) {
-    if (isFormSubmit) {
+    if (shouldRedirect) {
       return redirectToSettings(request, "error");
     }
 
@@ -112,7 +113,7 @@ export async function POST(request: Request) {
 
     revalidatePath("/admin/settings");
 
-    if (isFormSubmit) {
+    if (shouldRedirect) {
       return redirectToSettings(request, "saved");
     }
 
@@ -123,7 +124,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("ADMIN_SETTINGS_UPDATE_ERROR", error);
 
-    if (isFormSubmit) {
+    if (shouldRedirect) {
       return redirectToSettings(request, "error");
     }
 
