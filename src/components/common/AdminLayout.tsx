@@ -25,7 +25,7 @@ export default function AdminLayout({
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <section className="min-h-screen bg-slate-100 text-slate-950">
+    <section className="min-h-screen bg-neutral-50 text-slate-950">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-[288px_minmax(0,1fr)]">
         <AdminSidebar
           brand={brand}

@@ -22,6 +22,150 @@
       "description": "Quản lý người dùng, mẫu giao diện và cài đặt hệ thống trong khu vực quản trị."
     }
   },
+  "settings": {
+    "eyebrow": "Cài đặt",
+    "title": "Cài đặt hệ thống",
+    "description": "Quản lý mail, cấu hình vận hành và SEO mặc định cho toàn bộ nền tảng.",
+    "actions": {
+      "saveAll": "Lưu thay đổi"
+    },
+    "feedback": {
+      "saved": "Đã lưu cài đặt hệ thống.",
+      "error": "Không thể lưu cài đặt. Vui lòng kiểm tra dữ liệu và thử lại."
+    },
+    "email": {
+      "title": "Thiết lập email",
+      "description": "Cấu hình cài đặt email cho hệ thống, bao gồm máy chủ SMTP, cổng, tên người dùng và mật khẩu.",
+      "form": {
+        "fromName": {
+          "label": "Tên người gửi",
+          "placeholder": "Ví dụ: Crafolio"
+        },
+        "fromAddress": {
+          "label": "Email người gửi",
+          "placeholder": "no-reply@crafolio.app"
+        },
+        "smtpServer": {
+          "label": "Máy chủ SMTP",
+          "placeholder": "Nhập địa chỉ máy chủ SMTP"
+        },
+        "smtpPort": {
+          "label": "Cổng SMTP",
+          "placeholder": "Nhập số cổng SMTP"
+        },
+        "smtpEncryption": {
+          "label": "Mã hóa SMTP",
+          "options": ["TLS", "SSL", "Không mã hóa"]
+        },
+        "smtpUsername": {
+          "label": "Tên người dùng SMTP",
+          "placeholder": "Nhập tên người dùng SMTP"
+        },
+        "smtpPassword": {
+          "label": "Mật khẩu SMTP",
+          "placeholder": "Nhập mật khẩu SMTP"
+        },
+        "testEmail": {
+          "label": "Email nhận thử",
+          "placeholder": "admin@crafolio.app"
+        }
+      }
+    },
+    "system": {
+      "title": "Cài đặt hệ thống",
+      "description": "Thiết lập thông tin nền tảng, ngôn ngữ, múi giờ và các giới hạn vận hành.",
+      "form": {
+        "siteName": {
+          "label": "Tên trang web",
+          "placeholder": "Nhập tên trang web"
+        },
+        "siteUrl": {
+          "label": "URL trang web",
+          "placeholder": "https://crafolio.app"
+        },
+        "adminEmail": {
+          "label": "Email quản trị",
+          "placeholder": "admin@crafolio.app"
+        },
+        "language": {
+          "label": "Ngôn ngữ",
+          "placeholder": "Chọn ngôn ngữ",
+          "options": ["Tiếng Việt", "English"]
+        },
+        "timezone": {
+          "label": "Múi giờ",
+          "placeholder": "Chọn múi giờ",
+          "options": ["Asia/Bangkok", "Asia/Ho_Chi_Minh", "UTC"]
+        },
+        "uploadLimit": {
+          "label": "Giới hạn upload (MB)",
+          "placeholder": "10"
+        },
+        "sessionTimeout": {
+          "label": "Thời gian phiên (phút)",
+          "placeholder": "60"
+        }
+      },
+      "toggles": {
+        "allowRegistration": {
+          "label": "Cho phép đăng ký tài khoản",
+          "description": "Người dùng mới có thể tự tạo tài khoản portfolio."
+        },
+        "maintenanceMode": {
+          "label": "Bật chế độ bảo trì",
+          "description": "Tạm khóa trải nghiệm công khai khi cần cập nhật hệ thống."
+        }
+      }
+    },
+    "seo": {
+      "title": "Thiết lập SEO",
+      "description": "Cấu hình metadata, ảnh chia sẻ và các tùy chọn index mặc định cho website.",
+      "form": {
+        "metaTitle": {
+          "label": "Tiêu đề SEO mặc định",
+          "placeholder": "Nhập tiêu đề hiển thị trên công cụ tìm kiếm"
+        },
+        "metaDescription": {
+          "label": "Mô tả SEO mặc định",
+          "placeholder": "Viết mô tả ngắn cho trang chủ và các trang chưa có metadata riêng"
+        },
+        "keywords": {
+          "label": "Từ khóa SEO",
+          "placeholder": "portfolio, cv online, designer"
+        },
+        "canonicalUrl": {
+          "label": "Canonical URL",
+          "placeholder": "https://crafolio.app"
+        },
+        "ogImage": {
+          "label": "Ảnh chia sẻ mặc định",
+          "placeholder": "https://crafolio.app/og-image.png"
+        }
+      },
+      "toggles": {
+        "indexing": {
+          "label": "Cho phép index",
+          "description": "Cho phép công cụ tìm kiếm thu thập dữ liệu các trang công khai."
+        },
+        "openGraph": {
+          "label": "Bật Open Graph",
+          "description": "Tạo metadata chia sẻ cho Facebook, LinkedIn và các nền tảng tương thích."
+        },
+        "twitterCard": {
+          "label": "Bật Twitter Card",
+          "description": "Tối ưu preview khi link được chia sẻ lên X."
+        },
+        "sitemap": {
+          "label": "Tạo sitemap tự động",
+          "description": "Cập nhật sitemap theo danh sách portfolio và trang công khai."
+        },
+        "jsonLd": {
+          "label": "Bật JSON-LD",
+          "description": "Thêm dữ liệu có cấu trúc để hỗ trợ rich results."
+        }
+      }
+    }
+  },
   "notFound": {
     "eyebrow": "404",
     "title": "Không tìm thấy trang quản trị",

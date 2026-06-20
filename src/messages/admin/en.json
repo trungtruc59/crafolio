@@ -22,6 +22,150 @@
       "description": "Manage users, templates, and system settings from this admin area."
     }
   },
+  "settings": {
+    "eyebrow": "Settings",
+    "title": "System settings",
+    "description": "Manage mail, operating configuration, and default SEO for the entire platform.",
+    "actions": {
+      "saveAll": "Save changes"
+    },
+    "feedback": {
+      "saved": "System settings were saved.",
+      "error": "Settings could not be saved. Check the data and try again."
+    },
+    "email": {
+      "title": "Email settings",
+      "description": "Configure system email delivery, including SMTP host, port, username, and password.",
+      "form": {
+        "fromName": {
+          "label": "Sender name",
+          "placeholder": "Example: Crafolio"
+        },
+        "fromAddress": {
+          "label": "Sender email",
+          "placeholder": "no-reply@crafolio.app"
+        },
+        "smtpServer": {
+          "label": "SMTP server",
+          "placeholder": "Enter SMTP server address"
+        },
+        "smtpPort": {
+          "label": "SMTP port",
+          "placeholder": "Enter SMTP port"
+        },
+        "smtpEncryption": {
+          "label": "SMTP encryption",
+          "options": ["TLS", "SSL", "No encryption"]
+        },
+        "smtpUsername": {
+          "label": "SMTP username",
+          "placeholder": "Enter SMTP username"
+        },
+        "smtpPassword": {
+          "label": "SMTP password",
+          "placeholder": "Enter SMTP password"
+        },
+        "testEmail": {
+          "label": "Test recipient",
+          "placeholder": "admin@crafolio.app"
+        }
+      }
+    },
+    "system": {
+      "title": "System configuration",
+      "description": "Set platform identity, language, timezone, and operating limits.",
+      "form": {
+        "siteName": {
+          "label": "Site name",
+          "placeholder": "Enter site name"
+        },
+        "siteUrl": {
+          "label": "Site URL",
+          "placeholder": "https://crafolio.app"
+        },
+        "adminEmail": {
+          "label": "Admin email",
+          "placeholder": "admin@crafolio.app"
+        },
+        "language": {
+          "label": "Language",
+          "placeholder": "Select language",
+          "options": ["Vietnamese", "English"]
+        },
+        "timezone": {
+          "label": "Timezone",
+          "placeholder": "Select timezone",
+          "options": ["Asia/Bangkok", "Asia/Ho_Chi_Minh", "UTC"]
+        },
+        "uploadLimit": {
+          "label": "Upload limit (MB)",
+          "placeholder": "10"
+        },
+        "sessionTimeout": {
+          "label": "Session timeout (minutes)",
+          "placeholder": "60"
+        }
+      },
+      "toggles": {
+        "allowRegistration": {
+          "label": "Allow account registration",
+          "description": "New users can create their own portfolio accounts."
+        },
+        "maintenanceMode": {
+          "label": "Enable maintenance mode",
+          "description": "Temporarily lock public experiences while the system is updated."
+        }
+      }
+    },
+    "seo": {
+      "title": "SEO settings",
+      "description": "Configure metadata, sharing image, and default indexing options for the site.",
+      "form": {
+        "metaTitle": {
+          "label": "Default SEO title",
+          "placeholder": "Enter the title shown in search results"
+        },
+        "metaDescription": {
+          "label": "Default SEO description",
+          "placeholder": "Write a short description for the homepage and pages without custom metadata"
+        },
+        "keywords": {
+          "label": "SEO keywords",
+          "placeholder": "portfolio, online cv, designer"
+        },
+        "canonicalUrl": {
+          "label": "Canonical URL",
+          "placeholder": "https://crafolio.app"
+        },
+        "ogImage": {
+          "label": "Default sharing image",
+          "placeholder": "https://crafolio.app/og-image.png"
+        }
+      },
+      "toggles": {
+        "indexing": {
+          "label": "Allow indexing",
+          "description": "Allow search engines to crawl public pages."
+        },
+        "openGraph": {
+          "label": "Enable Open Graph",
+          "description": "Generate sharing metadata for Facebook, LinkedIn, and compatible platforms."
+        },
+        "twitterCard": {
+          "label": "Enable Twitter Card",
+          "description": "Optimize previews when links are shared on X."
+        },
+        "sitemap": {
+          "label": "Generate sitemap automatically",
+          "description": "Update the sitemap from portfolios and public pages."
+        },
+        "jsonLd": {
+          "label": "Enable JSON-LD",
+          "description": "Add structured data to support rich results."
+        }
+      }
+    }
+  },
   "notFound": {
     "eyebrow": "404",
     "title": "Admin page not found",

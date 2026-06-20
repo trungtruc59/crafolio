@@ -66,8 +66,8 @@ export default function AdminHeader({
   }, [isAccountMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="flex min-h-16 items-center gap-3 px-4 sm:px-6">
+    <header className="sticky top-2 z-30 border-b border-slate-200 rounded-full bg-white/90 backdrop-blur max-w-6xl lg:px-3 mx-auto shadow">
+      <div className="flex min-h-16 items-center gap-3 px-4 sm:px-6 ">
         <button
           type="button"
           onClick={onToggleSidebar}
