@@ -111,6 +111,7 @@ export async function POST(request: Request) {
       session.user.email || session.user.id
     );
 
+    revalidatePath("/admin", "layout");
     revalidatePath("/admin/settings");
 
     if (shouldRedirect) {

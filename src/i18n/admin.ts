@@ -1,5 +1,6 @@
 import { getLocale } from "next-intl/server";
 import { defaultLocale, locales, type Locale } from "@/i18n/routing";
+import { getAdminSettings } from "@/lib/settings/admin-settings";
 
 const adminMessagesMap = {
   vi: () => import("../messages/admin/vi.json"),
@@ -15,7 +16,8 @@ function isValidLocale(locale?: string): locale is Locale {
 }
 
 export async function getAdminLocale() {
-  const locale = await getLocale();
+  const settings = await getAdminSettings();
+  const locale = settings.system.language || (await getLocale());
 
   return isValidLocale(locale) ? locale : defaultLocale;
 }

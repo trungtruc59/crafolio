@@ -4,8 +4,26 @@
     "title": "CRAFOLIO",
     "viewSite": "Xem trang",
     "navigation": {
-      "overview": "Tổng quan",
-      "userDashboard": "Bảng điều khiển người dùng"
+      "dashboard": "Bảng điều khiển",
+      "templates": "Mẫu giao diện",
+      "modules": "Mô-đun",
+      "blocks": "Khối",
+      "themes": "Chủ đề",
+      "users": "Người dùng",
+      "plans": "Gói dịch vụ",
+      "settings": "Cài đặt"
+    },
+    "header": {
+      "toggleSidebar": "Mở/đóng thanh điều hướng",
+      "searchAdmin": "Tìm kiếm trong trang quản trị",
+      "searchPlaceholder": "Tìm kiếm",
+      "notifications": "Thông báo",
+      "toggleTheme": "Đổi giao diện",
+      "accountSettings": "Cài đặt tài khoản",
+      "signOut": "Đăng xuất"
+    },
+    "sidebar": {
+      "closeSidebar": "Đóng thanh điều hướng"
     },
     "fallbackName": "Quản trị viên"
   },

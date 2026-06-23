@@ -15,17 +15,6 @@ import {
   X,
 } from "lucide-react";
 
-const menuItems = [
-  { label: "Dashboard", href: "/admin/dashboard" },
-  { label: "Templates", href: "/admin/templates" },
-  { label: "Modules", href: "/admin/modules" },
-  { label: "Blocks", href: "/admin/blocks" },
-  { label: "Themes", href: "/admin/themes" },
-  { label: "Users", href: "/admin/users" },
-  { label: "Plans", href: "/admin/plans" },
-  { label: "Settings", href: "/admin/settings" },
-];
-
 const itemIcons = [
   LayoutDashboard,
   Layers,
@@ -37,10 +26,23 @@ const itemIcons = [
   Settings,
 ];
 
+type AdminNavigationLabels = {
+  dashboard: string;
+  templates: string;
+  modules: string;
+  blocks: string;
+  themes: string;
+  users: string;
+  plans: string;
+  settings: string;
+};
+
 type AdminSidebarProps = {
   brand: string;
   title: string;
   viewSiteLabel: string;
+  navigationLabels: AdminNavigationLabels;
+  closeSidebarLabel: string;
   isOpen: boolean;
   onClose: () => void;
 };
@@ -56,10 +58,22 @@ function isActivePath(pathname: string, href: string) {
 export default function AdminSidebar({
   title,
   viewSiteLabel,
+  navigationLabels,
+  closeSidebarLabel,
   isOpen,
   onClose,
 }: AdminSidebarProps) {
   const pathname = usePathname();
+  const menuItems = [
+    { label: navigationLabels.dashboard, href: "/admin/dashboard" },
+    { label: navigationLabels.templates, href: "/admin/templates" },
+    { label: navigationLabels.modules, href: "/admin/modules" },
+    { label: navigationLabels.blocks, href: "/admin/blocks" },
+    { label: navigationLabels.themes, href: "/admin/themes" },
+    { label: navigationLabels.users, href: "/admin/users" },
+    { label: navigationLabels.plans, href: "/admin/plans" },
+    { label: navigationLabels.settings, href: "/admin/settings" },
+  ];
 
   return (
     <>
@@ -91,8 +105,8 @@ export default function AdminSidebar({
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close sidebar"
-            title="Close sidebar"
+            aria-label={closeSidebarLabel}
+            title={closeSidebarLabel}
             className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-300 transition hover:bg-white/10 hover:text-white lg:hidden"
           >
             <X className="h-4 w-4" />

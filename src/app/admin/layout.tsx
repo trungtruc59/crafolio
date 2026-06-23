@@ -29,9 +29,12 @@ export default async function AdminLayout({
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <AdminLayoutShell
-        brand=""
+        brand={messages.layout.brand}
         title={messages.layout.title}
         viewSiteLabel={messages.layout.viewSite}
+        navigationLabels={messages.layout.navigation}
+        headerLabels={messages.layout.header}
+        closeSidebarLabel={messages.layout.sidebar.closeSidebar}
         displayName={displayName}
         email={session.user.email}
       >

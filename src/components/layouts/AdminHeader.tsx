@@ -17,6 +17,15 @@ type AdminHeaderProps = {
   email?: string | null;
   isSidebarOpen: boolean;
   onToggleSidebar: () => void;
+  labels: {
+    toggleSidebar: string;
+    searchAdmin: string;
+    searchPlaceholder: string;
+    notifications: string;
+    toggleTheme: string;
+    accountSettings: string;
+    signOut: string;
+  };
 };
 
 export default function AdminHeader({
@@ -24,6 +33,7 @@ export default function AdminHeader({
   email,
   isSidebarOpen,
   onToggleSidebar,
+  labels,
 }: AdminHeaderProps) {
   const accountMenuRef = useRef<HTMLDetailsElement>(null);
   const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
@@ -72,19 +82,19 @@ export default function AdminHeader({
           type="button"
           onClick={onToggleSidebar}
           aria-expanded={isSidebarOpen}
-          aria-label="Toggle sidebar"
-          title="Toggle sidebar"
+          aria-label={labels.toggleSidebar}
+          title={labels.toggleSidebar}
           className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-slate-200 text-slate-600 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950"
         >
           <Menu className="h-5 w-5" />
         </button>
 
         <label className="relative hidden min-w-0 flex-1 md:block">
-          <span className="sr-only">Search admin</span>
+          <span className="sr-only">{labels.searchAdmin}</span>
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <input
             type="search"
-            placeholder="Search"
+            placeholder={labels.searchPlaceholder}
             className="h-10 w-full max-w-xl rounded-md border border-slate-200 bg-slate-50 pl-10 pr-3 text-sm text-slate-700 outline-none transition placeholder:text-slate-400 focus:border-slate-300 focus:bg-white focus:ring-2 focus:ring-slate-100"
           />
         </label>
@@ -92,8 +102,8 @@ export default function AdminHeader({
         <div className="ml-auto flex items-center gap-2">
           <button
             type="button"
-            aria-label="Notifications"
-            title="Notifications"
+            aria-label={labels.notifications}
+            title={labels.notifications}
             className="relative inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 text-slate-600 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950"
           >
             <Bell className="h-5 w-5" />
@@ -104,8 +114,8 @@ export default function AdminHeader({
             type="button"
             onClick={() => setIsDarkMode((value) => !value)}
             aria-pressed={isDarkMode}
-            aria-label="Toggle theme"
-            title="Toggle theme"
+            aria-label={labels.toggleTheme}
+            title={labels.toggleTheme}
             className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 text-slate-600 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950"
           >
             {isDarkMode ? (
@@ -123,7 +133,7 @@ export default function AdminHeader({
             }
             className="relative"
           >
-            <summary className="flex cursor-pointer list-none items-center gap-2 bg-white  text-sm text-slate-700 transition hover:border-slate-300 hover:bg-slate-50">
+            <summary className="flex cursor-pointer list-none items-center gap-2 text-sm text-slate-700 transition hover:border-slate-300 hover:bg-slate-50">
               <span className="flex h-8 w-8 items-center justify-center rounded-2xl bg-slate-950 text-xs font-semibold text-white">
                 {userInitial}
               </span>
@@ -147,7 +157,7 @@ export default function AdminHeader({
                   className="flex w-full items-center gap-2 px-4 py-2 text-left text-sm text-slate-600 transition hover:bg-slate-50 hover:text-slate-950"
                 >
                   <Settings className="h-4 w-4" />
-                  Account settings
+                  {labels.accountSettings}
                 </button>
                 <button
                   type="button"
@@ -155,7 +165,7 @@ export default function AdminHeader({
                   className="flex w-full items-center gap-2 px-4 py-2 text-left text-sm text-red-600 transition hover:bg-red-50"
                 >
                   <LogOut className="h-4 w-4" />
-                  Sign out
+                  {labels.signOut}
                 </button>
               </div>
             </div>

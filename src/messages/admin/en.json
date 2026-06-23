@@ -4,8 +4,26 @@
     "title": "Admin Template",
     "viewSite": "View site",
     "navigation": {
-      "overview": "Overview",
-      "userDashboard": "User dashboard"
+      "dashboard": "Dashboard",
+      "templates": "Templates",
+      "modules": "Modules",
+      "blocks": "Blocks",
+      "themes": "Themes",
+      "users": "Users",
+      "plans": "Plans",
+      "settings": "Settings"
+    },
+    "header": {
+      "toggleSidebar": "Toggle sidebar",
+      "searchAdmin": "Search admin",
+      "searchPlaceholder": "Search",
+      "notifications": "Notifications",
+      "toggleTheme": "Toggle theme",
+      "accountSettings": "Account settings",
+      "signOut": "Sign out"
+    },
+    "sidebar": {
+      "closeSidebar": "Close sidebar"
     },
     "fallbackName": "Admin"
   },
